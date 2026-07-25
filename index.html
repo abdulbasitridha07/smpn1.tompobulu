@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMP Negeri 1 Tompobulu | Official Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- ==========================================================================
+         SPLASH SCREEN / ANIMASI PEMBUKA & PEMUTAR MUSIK
+         ========================================================================== -->
+    <div id="splash-screen">
+        <div class="splash-logo-wrapper">
+            <img src="Images/Logosmp.png" alt="Logo SMP">
+        </div>
+        <h2>SMP Negeri 1 Tompobulu</h2>
+        <p>Membina Generasi Cerdas & Berkarakter</p>
+        <button id="btn-enter">
+            Masuk ke Website <i class="fas fa-sign-in-alt"></i>
+        </button>
+    </div>
+
+    <!-- AUDIO ELEMEN (Lagu Bagimu Negeri) -->
+    <audio id="bg-music">
+        <source src="Images/Bagimu Negeri - Archipelago Series - Epic Majestic Orchestral.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- TOMBOL KONTROL AUDIO MELAYANG (MUTE/UNMUTE) - Tersembunyi otomatis sesuai request CSS sebelumnya -->
+    <button id="music-toggle" title="Matikan/Putar Musik"><i class="fas fa-volume-up"></i></button>
+
+
+    <!-- ==========================================================================
+         KONTEN UTAMA WEBSITE
+         ========================================================================== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span><i class="fas fa-envelope"></i> info@sekolah.sch.id</span>
+                <span><i class="fas fa-phone"></i> (021) 12345678</span>
+            </div>
+            <div class="top-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <img src="Images/Logosmp.png" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
+                <div class="logo-text">
+                    <h1>SMP Negeri 1 Tompobulu</h1>
+                    <p>Membina Generasi Cerdas & Berkarakter</p>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Profil <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Profil.html">Profil</a></li>
+                            <li><a href="Sejarah.html">Sejarah</a></li>
+                            <li><a href="Prestasi.html">Prestasi</a></li>
+                            <li><a href="Organisasi.html">Organisasi</a></li>
+                            <li><a href="Fasilitas.html">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Visi Misi.html">Visi Misi</a></li>
+                    <li><a href="guru.html">Guru & Staf</a></li>
+                    <li><a href="SPMB.html">SPMB 2026</a></li>
+                    <li><a href="Download.html">Download</a></li>
+                    <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero hero-left-align">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h2>SELAMAT DATANG DI WEBSITE RESMI</h2>
+            <p>Membina Generasi yang Cerdas, Berkarakter, Unggul, dan Berprestasi.</p>
+            <a href="#berita" class="btn-primary">Lihat Berita <i class="fas fa-arrow-down"></i></a>
+        </div>
+    </section>
+
+    <section class="stats-section stats-small">
+        <div class="container stats-grid">
+            <div class="stats-card">
+                <div class="stats-icon"><i class="fas fa-user-graduate"></i></div>
+                <div class="stats-info">
+                    <h3 class="stats-number">480+</h3>
+                    <p class="stats-label">Siswa Aktif</p>
+                </div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <div class="stats-info">
+                    <h3 class="stats-number">32</h3>
+                    <p class="stats-label">Guru / Pendidik</p>
+                </div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-icon"><i class="fas fa-user-tie"></i></div>
+                <div class="stats-info">
+                    <h3 class="stats-number">8</h3>
+                    <p class="stats-label">Staf Tata Usaha</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-layout" id="berita" style="margin-top: 40px;">
+        <section class="news-section">
+            <h2 class="section-title">Berita & Informasi Terbaru</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <a href="Berita.html" class="lockable-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; text-decoration: none; color: inherit;"></a>
+                    <div class="news-img">
+                        <div class="placeholder-img"><span>Gambar Berita 1</span></div>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-tag">Kategori</span>
+                        <h3><a href="#" class="lockable-link">Judul Berita atau Kegiatan Sekolah 1</a></h3>
+                        <p class="news-meta"><i class="far fa-calendar"></i> Tanggal Berita | oleh Admin</p>
+                        <p class="news-excerpt">Tuliskan ringkasan singkat atau cuplikan paragraf pertama dari berita sekolah Anda di sini untuk menarik perhatian pembaca...</p>
+                        <a href="#" class="btn-readmore lockable-link">Selengkapnya</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <a href="Berita.html" class="lockable-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; cursor: pointer; text-decoration: none; color: inherit;"></a>
+                    <div class="news-img">
+                        <div class="placeholder-img"><span>Gambar Berita 2</span></div>
+                    </div>
+                    <div class="news-body">
+                        <span class="news-tag">Kategori</span>
+                        <h3><a href="#" class="lockable-link">Judul Berita atau Kegiatan Sekolah 2</a></h3>
+                        <p class="news-meta"><i class="far fa-calendar"></i> Tanggal Berita | oleh Admin</p>
+                        <p class="news-excerpt">Tuliskan ringkasan singkat atau cuplikan paragraf pertama dari berita sekolah Anda di sini untuk menarik perhatian pembaca...</p>
+                        <a href="#" class="btn-readmore lockable-link">Selengkapnya</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">Sambutan Kepala Sekolah</h3>
+                <div class="widget-content kepsek-widget">
+                    <img src="Kepala Sekolah.jpeg" alt="Foto Kepala Sekolah" style="width: 120px; height: 140px; object-fit: cover; border-radius: 16px; display: block; margin: 0 auto 15px auto; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); transition: transform 0.3s ease;">
+                    <p style="text-align: center; font-weight: bold; color: #333; margin-bottom: 5px;">Nama Kepala Sekolah, M.Pd.</p>
+                    <p><em>"Tuliskan kutipan atau kalimat sambutan hangat singkat dari Kepala Sekolah Anda di bagian widget sidebar ini."</em></p>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">Agenda Terdekat</h3>
+                <ul class="agenda-list">
+                    <li>
+                        <span class="date-badge">Tgl <br> Bln</span>
+                        <p>Nama Agenda atau Kegiatan Sekolah Pertama</p>
+                    </li>
+                    <li>
+                        <span class="date-badge">Tgl <br> Bln</span>
+                        <p>Nama Agenda atau Kegiatan Sekolah Kedua</p>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Galeri Kegiatan Sekolah</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-placeholder-img"><span>Kegiatan Belajar</span></div>
+                        <a href="foto kegiatan belajar.html" class="lockable-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 99; cursor: pointer; text-decoration: none; color: inherit;"></a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon"><i class="fas fa-search-plus"></i></div>
+                            <h4>Kegiatan Belajar</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-placeholder-img"><span>Upacara Bendera</span></div>
+                        <a href="foto Upacara Bendera.html" class="lockable-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 99; cursor: pointer; text-decoration: none; color: inherit;"></a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon"><i class="fas fa-search-plus"></i></div>
+                            <h4>Upacara Bendera</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-placeholder-img"><span>Ekstrakurikuler</span></div>
+                        <a href="foto-ekstrakurikuler.html" class="lockable-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 99; cursor: pointer; text-decoration: none; color: inherit;"></a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon"><i class="fas fa-search-plus"></i></div>
+                            <h4>Ekstrakurikuler</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-img-wrapper">
+                        <div class="gallery-placeholder-img"><span>Pentas Seni</span></div>
+                        <a href="foto Pentas Seni.html" class="lockable-link" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 99; cursor: pointer; text-decoration: none; color: inherit;"></a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-icon"><i class="fas fa-search-plus"></i></div>
+                            <h4>Pentas Seni</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
+            <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="text-transform: uppercase; letter-spacing: 1px;">
+                    <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+                </div>
+                <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
+                    <span style="display: inline-block;">
+                        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
+                        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
+                    </span>
+                </div>
+                <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.05); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
+                    View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+                </a>
+            </div>
+
+            <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
+                <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
+            </div>
+            <p>&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+   <!-- GANTI SCRIPT PALING BAWAH DENGAN KODE JAMINAN AKURAT INI -->
+    <script>
+        const btnEnter = document.getElementById('btn-enter');
+        const splash = document.getElementById('splash-screen');
+        const music = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+
+        let isMusicPlaying = false; 
+        let isFading = false;
+
+        // Mendeteksi tipe muat ulang halaman secara akurat (Mendukung offline & online)
+        let tipeNavigasi = "";
+        if (window.performance && window.performance.getEntriesByType) {
+            const navEntries = window.performance.getEntriesByType("navigation");
+            if (navEntries.length > 0) {
+                tipeNavigasi = navEntries[0].type; // Hasilnya bisa: "reload", "navigate", dll.
+            }
+        } else {
+            // Cadangan untuk browser versi lama
+            if (window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+                tipeNavigasi = "reload";
+            }
+        }
+
+        // ==========================================================================
+        // ATURAN UTAMA: Kapan animasi & musik boleh muncul?
+        // ==========================================================================
+        // Jika halaman DI-REFRESH (reload), atau baru pertama kali masuk ke web (belum ada jejak)
+        if (tipeNavigasi === "reload" || !sessionStorage.getItem('pernahMasukSesiIni')) {
+            // WAJIB MUNCULKAN ANIMASI & MUSIK
+            if (splash) splash.style.display = 'flex';
+            
+            // Hapus status kunci jika ini adalah refresh baru
+            sessionStorage.removeItem('pernahMasukSesiIni');
+        } else {
+            // HANYA JIKA DATANG DARI MENU LAIN (Klik Home): Hancurkan splash & musik secara instan
+            if (splash) splash.style.display = 'none';
+            if (musicToggle) musicToggle.style.display = 'none';
+            isMusicPlaying = false;
+        }
+
+        // SISTEM PENGUNCI HALAMAN (Hanya aktif jika musik sedang berputar)
+        const allLinks = document.querySelectorAll('.nav-menu a, .lockable-link');
+
+        function handleLinkClick(e) {
+            if (isMusicPlaying) {
+                e.preventDefault(); // Kunci halaman, tidak boleh pindah
+                alert("Harap dengarkan lagu kebangsaan sampai selesai sebelum menjelajahi menu website.");
+            }
+        }
+
+        allLinks.forEach(link => {
+            if(link.getAttribute('href') !== '#') {
+                link.addEventListener('click', handleLinkClick);
+            }
+        });
+
+        // KETIKA TOMBOL MASUK DIKLIK PERTAMA KALI
+        if (btnEnter) {
+            btnEnter.addEventListener('click', function() {
+                // Tandai di memori tab bahwa user sudah resmi melewati gerbang depan
+                sessionStorage.setItem('pernahMasukSesiIni', 'true');
+
+                if (music) {
+                    music.volume = 1.0;
+                    music.currentTime = 69; // Mulai di detik 69
+                    music.play().then(() => {
+                        isMusicPlaying = true; // Kunci aktif selama musik jalan!
+                        if (musicToggle) musicToggle.style.display = 'none'; 
+                    }).catch(err => console.log("Musik tertahan browser:", err));
+                }
+
+                if (splash) {
+                    splash.style.opacity = '0';
+                    splash.style.visibility = 'hidden';
+                    splash.style.transform = 'translateY(-100%)';
+                    setTimeout(() => {
+                        splash.style.display = 'none';
+                    }, 600);
+                }
+            });
+        }
+
+        // DURASI OTOMATIS & FADE OUT MUSIK (Membuka Kunci Menu Saat Lagu Selesai)
+        if (music) {
+            music.addEventListener('timeupdate', function() {
+                if (music.currentTime >= 77 && !isFading) {
+                    isFading = true;
+                    let fadeInterval = setInterval(function() {
+                        if (music.volume > 0.1) {
+                            music.volume -= 0.1;
+                        } else {
+                            clearInterval(fadeInterval);
+                            music.pause();
+                            music.volume = 1.0; 
+                            isFading = false;
+                            isMusicPlaying = false; // Kunci terbuka otomatis!
+                        }
+                    }, 200); 
+                }
+
+                if (music.currentTime >= 79) {
+                    music.pause();
+                    music.volume = 1.0;
+                    isFading = false;
+                    isMusicPlaying = false; // Kunci terbuka otomatis!
+                }
+            });
+        }
+    </script>
+</body>
+</html>

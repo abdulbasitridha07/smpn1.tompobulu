@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guru & Staf | SMP Negeri 1 Tompobulu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Modal Pop-up Halus & Modern */
+        .modal {
+            display: flex;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.65); /* Dark slate overlay */
+            backdrop-filter: blur(6px);
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 32px 28px;
+            border-radius: 20px;
+            max-width: 460px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: scale(0.92) translateY(12px);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        /* TOMBOL CLOSE MERAH & MODERN */
+        .close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #fee2e2; /* Red soft background */
+            color: #ef4444; /* Red icon color */
+            border: 1px solid #fca5a5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.1);
+        }
+
+        /* Efek Hover (Arahkan Kursor) */
+        .close-btn:hover {
+            background-color: #ef4444;
+            color: #ffffff;
+            transform: rotate(90deg) scale(1.08);
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+            border-color: #ef4444;
+        }
+
+        /* Efek Active (Saat Diklik) */
+        .close-btn:active {
+            transform: rotate(90deg) scale(0.92);
+            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span><i class="fas fa-envelope"></i> info@sekolah.sch.id</span>
+                <span><i class="fas fa-phone"></i> (021) 12345678</span>
+            </div>
+            <div class="top-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
+                <div class="logo-text">
+                    <h1>SMP Negeri 1 Tompobulu</h1>
+                    <p>Membina Generasi Cerdas & Berkarakter</p>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Profil <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Profil.html">Profil</a></li>
+                            <li><a href="Sejarah.html">Sejarah</a></li>
+                            <li><a href="Prestasi.html">Prestasi</a></li>
+                            <li><a href="Organisasi.html">Organisasi</a></li>
+                            <li><a href="Fasilitas.html">Fasilitas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="Visi Misi.html">Visi Misi</a></li>
+                    <li><a href="guru.html" class="active">Guru & Staf</a></li>
+                    <li><a href="SPMB.html">SPMB 2026</a></li>
+                    <li><a href="Download.html">Download</a></li>
+                    <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="margin-top: 40px; margin-bottom: 50px;">
+        <h2 class="section-title">Daftar Guru & Tenaga Kependidikan</h2>
+        
+        <div class="teacher-grid">
+            
+            <!-- KARTU GURU 1 (NIP dihilangkan dari tampilan awal) -->
+            <div class="teacher-card" onclick="openModal('modal-guru1')" style="cursor: pointer;">
+                <img src="Images/Abdul Basit Ridha.jpeg" alt="Foto Abdul Basit Ridha, S.Pd.">
+                <div class="teacher-info">
+                    <h3>Abdul Basit Ridha, S.Pd.</h3>
+                    <p class="role">Staf Administrasi</p>
+                    <span style="font-size: 11px; color: #ffa500; font-weight: bold; text-transform: uppercase; margin-top: 6px; display: inline-block;">Klik untuk detail <i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+
+            <!-- KARTU GURU 2 (NIP dihilangkan dari tampilan awal) -->
+            <div class="teacher-card" onclick="openModal('modal-guru2')" style="cursor: pointer;">
+                <img src="Images/Abdul Basit Ridha.jpeg" alt="Foto Abdul Basit Ridha, S.Pd.">
+                <div class="teacher-info">
+                    <h3>Abdul Basit Ridha, S.Pd.</h3>
+                    <p class="role">Staf Administrasi</p>
+                    <span style="font-size: 11px; color: #ffa500; font-weight: bold; text-transform: uppercase; margin-top: 6px; display: inline-block;">Klik untuk detail <i class="fas fa-search-plus"></i></span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- CONTAINER MODAL POP-UP DETAIL GURU 1 (NIP muncul di sini) -->
+    <div id="modal-guru1" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-guru1')" aria-label="Tutup Modal">
+                <i class="fas fa-xmark"></i>
+            </button>
+            <div style="text-align: center;">
+                <img src="Images/Abdul Basit Ridha.jpeg" alt="Foto Abdul Basit Ridha" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; border: 3px solid #ffa500; padding: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom: 4px; color: #1e293b; font-size: 20px; font-weight: 700;">Abdul Basit Ridha, S.Pd.</h3>
+                <p style="color: #1b5e20; font-weight: 600; margin-bottom: 16px; font-size: 14px;">Staf Administrasi</p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #f1f5f9; margin-bottom: 16px;">
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; color: #475569; font-size: 14px;">
+                <li><strong>NIP:</strong> 19850101XXXXXXXXXX</li>
+                <li><strong>Tempat, Tgl Lahir:</strong> Gowa, 01 Januari 1985</li>
+                <li><strong>Pendidikan Terakhir:</strong> S1 Pendidikan</li>
+                <li><strong>Mata Pelajaran / Tugas:</strong> Administrasi Sekolah</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- CONTAINER MODAL POP-UP DETAIL GURU 2 (NIP muncul di sini) -->
+    <div id="modal-guru2" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('modal-guru2')" aria-label="Tutup Modal">
+                <i class="fas fa-xmark"></i>
+            </button>
+            <div style="text-align: center;">
+                <img src="Images/Abdul Basit Ridha.jpeg" alt="Foto Abdul Basit Ridha" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; margin-bottom: 14px; border: 3px solid #ffa500; padding: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+                <h3 style="margin-bottom: 4px; color: #1e293b; font-size: 20px; font-weight: 700;">Abdul Basit Ridha, S.Pd.</h3>
+                <p style="color: #1b5e20; font-weight: 600; margin-bottom: 16px; font-size: 14px;">Staf Administrasi</p>
+            </div>
+            <hr style="border: 0; border-top: 1px solid #f1f5f9; margin-bottom: 16px;">
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2; color: #475569; font-size: 14px;">
+                <li><strong>NIP:</strong> 19890202XXXXXXXXXX</li>
+                <li><strong>Tempat, Tgl Lahir:</strong> Gowa, 02 Februari 1989</li>
+                <li><strong>Pendidikan Terakhir:</strong> S1 Pendidikan</li>
+                <li><strong>Mata Pelajaran / Tugas:</strong> Administrasi Sekolah</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
+            
+            <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
+                <a href="#" style="color: #ffffff;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #ffffff;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: #ffffff;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #ffffff;"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="text-transform: uppercase; letter-spacing: 1px;">
+                    <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+                </div>
+                <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
+                    <span style="display: inline-block;">
+                        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
+                        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
+                    </span>
+                </div>
+                <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; background: rgba(255, 165, 0, 0.05);">
+                    View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+                </a>
+            </div>
+
+            <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
+                <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
+            </div>
+            
+            <p>&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JAVASCRIPT MODAL -->
+    <script>
+        localStorage.setItem('sedangBukaMenuLain', 'true');
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+</body>
+</html>

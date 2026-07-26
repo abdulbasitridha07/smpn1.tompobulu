@@ -109,6 +109,32 @@
 </head>
 <body>
 
+    <!-- ==========================================================================
+         SPLASH SCREEN / ANIMASI PEMBUKA & PEMUTAR MUSIK
+         ========================================================================== -->
+    <div id="splash-screen">
+        <div class="splash-logo-wrapper">
+            <img src="Images/Logosmp.png" alt="Logo SMP">
+        </div>
+        <h2>SMP Negeri 1 Tompobulu</h2>
+        <p>Membina Generasi Cerdas & Berkarakter</p>
+        <button id="btn-enter">
+            Masuk ke Website <i class="fas fa-sign-in-alt"></i>
+        </button>
+    </div>
+
+    <!-- AUDIO ELEMEN (Lagu Bagimu Negeri) -->
+    <audio id="bg-music">
+        <source src="Images/Bagimu Negeri - Archipelago Series - Epic Majestic Orchestral.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- TOMBOL KONTROL AUDIO MELAYANG -->
+    <button id="music-toggle" title="Matikan/Putar Musik"><i class="fas fa-volume-up"></i></button>
+
+
+    <!-- ==========================================================================
+         KONTEN UTAMA WEBSITE
+         ========================================================================== -->
     <!-- TOP BAR INFO -->
     <div class="top-bar">
         <div class="container">
@@ -127,14 +153,22 @@
     <!-- HEADER & NAVIGASI -->
     <header>
         <div class="container header-container">
+            <!-- Bagian Logo & Nama Sekolah -->
             <div class="logo-area">
-                <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
+                <img src="Images/Logosmp.png" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
                 <div class="logo-text">
                     <h1>SMP Negeri 1 Tompobulu</h1>
                     <p>Membina Generasi Cerdas & Berkarakter</p>
                 </div>
             </div>
-            <nav class="nav-menu">
+
+            <!-- Tombol Hamburger untuk Mobile -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Navigasi Utama -->
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     
@@ -298,5 +332,116 @@
         </div>
     </footer>
 
+    <!-- SCRIPT LOGIKA SPLASH SCREEN, MUSIK & MOBILE MENU -->
+    <script>
+        const btnEnter = document.getElementById('btn-enter');
+        const splash = document.getElementById('splash-screen');
+        const music = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+
+        let isMusicPlaying = false; 
+        let isFading = false;
+
+        // Mendeteksi tipe navigasi halaman (Reload / First Visit / Menu Navigation)
+        let tipeNavigasi = "";
+        if (window.performance && window.performance.getEntriesByType) {
+            const navEntries = window.performance.getEntriesByType("navigation");
+            if (navEntries.length > 0) {
+                tipeNavigasi = navEntries[0].type; 
+            }
+        } else if (window.performance.navigation) {
+            if (window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+                tipeNavigasi = "reload";
+            }
+        }
+
+        // ATURAN SPLASH SCREEN & MUSIK
+        if (tipeNavigasi === "reload" || !sessionStorage.getItem('pernahMasukSesiIni')) {
+            if (splash) splash.style.display = 'flex';
+            sessionStorage.removeItem('pernahMasukSesiIni');
+        } else {
+            if (splash) splash.style.display = 'none';
+            if (musicToggle) musicToggle.style.display = 'none';
+            isMusicPlaying = false;
+        }
+
+        // SISTEM PENGUNCIAN LINK SAAT MUSIK BERPUTAR
+        const allLinks = document.querySelectorAll('.nav-menu a, .lockable-link');
+
+        function handleLinkClick(e) {
+            if (isMusicPlaying) {
+                e.preventDefault();
+                alert("Harap dengarkan lagu kebangsaan sampai selesai sebelum menjelajahi menu website.");
+            }
+        }
+
+        allLinks.forEach(link => {
+            if(link.getAttribute('href') !== '#') {
+                link.addEventListener('click', handleLinkClick);
+            }
+        });
+
+        // KETIKA TOMBOL MASUK DIKLIK
+        if (btnEnter) {
+            btnEnter.addEventListener('click', function() {
+                sessionStorage.setItem('pernahMasukSesiIni', 'true');
+
+                if (music) {
+                    music.volume = 1.0;
+                    music.currentTime = 69; // Mulai di detik ke-69
+                    music.play().then(() => {
+                        isMusicPlaying = true;
+                        if (musicToggle) musicToggle.style.display = 'none'; 
+                    }).catch(err => console.log("Musik tertahan browser:", err));
+                }
+
+                if (splash) {
+                    splash.style.opacity = '0';
+                    splash.style.visibility = 'hidden';
+                    splash.style.transform = 'translateY(-100%)';
+                    setTimeout(() => {
+                        splash.style.display = 'none';
+                    }, 600);
+                }
+            });
+        }
+
+        // FADE OUT OTOMATIS & MEMBUKA KUNCI MENU
+        if (music) {
+            music.addEventListener('timeupdate', function() {
+                if (music.currentTime >= 77 && !isFading) {
+                    isFading = true;
+                    let fadeInterval = setInterval(function() {
+                        if (music.volume > 0.1) {
+                            music.volume -= 0.1;
+                        } else {
+                            clearInterval(fadeInterval);
+                            music.pause();
+                            music.volume = 1.0; 
+                            isFading = false;
+                            isMusicPlaying = false; // Kunci terbuka otomatis
+                        }
+                    }, 200); 
+                }
+
+                if (music.currentTime >= 79) {
+                    music.pause();
+                    music.volume = 1.0;
+                    isFading = false;
+                    isMusicPlaying = false; // Kunci terbuka otomatis
+                }
+            });
+        }
+
+        // SCRIPT TOGGLE MOBILE MENU
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
 </body>
 </html>

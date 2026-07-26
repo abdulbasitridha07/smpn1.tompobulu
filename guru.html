@@ -99,16 +99,22 @@
         </div>
     </div>
 
+    <!-- HEADER PERBAIKAN -->
     <header>
         <div class="container header-container">
-            <div class="logo-area">
+            <div class="logo-area" style="display: flex; align-items: center; gap: 12px;">
                 <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
                 <div class="logo-text">
-                    <h1>SMP Negeri 1 Tompobulu</h1>
-                    <p>Membina Generasi Cerdas & Berkarakter</p>
+                    <h1 style="font-size: 20px; margin: 0;">SMP Negeri 1 Tompobulu</h1>
+                    <p style="font-size: 12px; margin: 0; color: #64748b;">Membina Generasi Cerdas & Berkarakter</p>
                 </div>
             </div>
-            <nav class="nav-menu">
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
@@ -135,8 +141,7 @@
         <h2 class="section-title">Daftar Guru & Tenaga Kependidikan</h2>
         
         <div class="teacher-grid">
-            
-            <!-- KARTU GURU 1 (NIP dihilangkan dari tampilan awal) -->
+            <!-- KARTU GURU 1 -->
             <div class="teacher-card" onclick="openModal('modal-guru1')" style="cursor: pointer;">
                 <img src="Images/Abdul Basit Ridha.jpeg" alt="Foto Abdul Basit Ridha, S.Pd.">
                 <div class="teacher-info">
@@ -146,7 +151,7 @@
                 </div>
             </div>
 
-            <!-- KARTU GURU 2 (NIP dihilangkan dari tampilan awal) -->
+            <!-- KARTU GURU 2 -->
             <div class="teacher-card" onclick="openModal('modal-guru2')" style="cursor: pointer;">
                 <img src="Images/Abdul Basit Ridha.jpeg" alt="Foto Abdul Basit Ridha, S.Pd.">
                 <div class="teacher-info">
@@ -155,11 +160,10 @@
                     <span style="font-size: 11px; color: #ffa500; font-weight: bold; text-transform: uppercase; margin-top: 6px; display: inline-block;">Klik untuk detail <i class="fas fa-search-plus"></i></span>
                 </div>
             </div>
-
         </div>
     </main>
 
-    <!-- CONTAINER MODAL POP-UP DETAIL GURU 1 (NIP muncul di sini) -->
+    <!-- MODAL DETAIL GURU 1 -->
     <div id="modal-guru1" class="modal">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('modal-guru1')" aria-label="Tutup Modal">
@@ -180,7 +184,7 @@
         </div>
     </div>
 
-    <!-- CONTAINER MODAL POP-UP DETAIL GURU 2 (NIP muncul di sini) -->
+    <!-- MODAL DETAIL GURU 2 -->
     <div id="modal-guru2" class="modal">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal('modal-guru2')" aria-label="Tutup Modal">
@@ -203,7 +207,6 @@
 
     <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
         <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
-            
             <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
                 <a href="#" style="color: #ffffff;"><i class="fab fa-instagram"></i></a>
                 <a href="#" style="color: #ffffff;"><i class="fab fa-youtube"></i></a>
@@ -220,7 +223,7 @@
 
             <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
                 <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
-                    <span style="display: inline-block;">
+                    <span>
                         <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
                         Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
                     </span>
@@ -242,10 +245,11 @@
         </div>
     </footer>
 
-    <!-- SCRIPT JAVASCRIPT MODAL -->
+    <!-- SCRIPT JAVASCRIPT LENGKAP -->
     <script>
         localStorage.setItem('sedangBukaMenuLain', 'true');
 
+        // Fungsi Modal
         function openModal(id) {
             const modal = document.getElementById(id);
             if (modal) {
@@ -260,10 +264,21 @@
             }
         }
 
+        // Tutup modal jika mengklik area gelap luar modal
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.classList.remove('active');
             }
+        }
+
+        // Toggle Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
         }
     </script>
 </body>

@@ -9,11 +9,12 @@
 </head>
 <body>
 
+    <!-- TOP BAR -->
     <div class="top-bar">
         <div class="container">
             <div class="top-info">
-                <span><i class="fas fa-envelope"></i> info@sekolah.sch.id</span>
-                <span><i class="fas fa-phone"></i> (021) 12345678</span>
+                <span><i class="fas fa-envelope"></i> smpntompobulu1@gmail.com</span>
+                <span><i class="fas fa-phone"></i> +62 857 5634 9250</span>
             </div>
             <div class="top-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -23,20 +24,24 @@
         </div>
     </div>
 
+    <!-- HEADER -->
     <header>
         <div class="container header-container">
-            <div class="logo-area">
-    <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
-    
-    <div class="logo-text">
-        <h1>SMP Negeri 1 Tompobulu</h1>
-        <p>Membina Generasi Cerdas & Berkarakter</p>
-    </div>
-</div>
-            <nav class="nav-menu">
+            <div class="logo-area" style="display: flex; align-items: center; gap: 12px;">
+                <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
+                <div class="logo-text">
+                    <h1 style="font-size: 20px; margin: 0;">SMP Negeri 1 Tompobulu</h1>
+                    <p style="font-size: 12px; margin: 0; color: #64748b;">Membina Generasi Cerdas & Berkarakter</p>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle">Profil <i class="fas fa-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -47,22 +52,22 @@
                             <li><a href="Fasilitas.html">Fasilitas</a></li>
                         </ul>
                     </li>
-
                     <li><a href="Visi Misi.html">Visi Misi</a></li>
                     <li><a href="guru.html">Guru & Staf</a></li>
                     <li><a href="SPMB.html">SPMB 2026</a></li>
                     <li><a href="Download.html">Download</a></li>
-                    <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+                    <li><a href="hubungi-kami.html" class="active">Hubungi Kami</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- KONTEN UTAMA -->
     <main class="container" style="margin-top: 40px; margin-bottom: 50px; max-width: 1000px;">
         <h2 class="section-title">Hubungi Kami</h2>
         
         <div class="kontak-container">
-            
+            <!-- FORM BUKU TAMU -->
             <div class="kontak-form-box">
                 <h3>Kirim Pesan (Buku Tamu)</h3>
                 <p>Silakan isi formulir di bawah ini untuk mengirimkan pertanyaan, saran, atau keperluan informasi lainnya langsung ke pihak tata usaha sekolah kami.</p>
@@ -92,6 +97,7 @@
                 </form>
             </div>
 
+            <!-- INFORMASI KONTAK SEKOLAH -->
             <div class="kontak-info-box">
                 <h3>Informasi Sekolah</h3>
                 
@@ -100,15 +106,15 @@
                         <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="info-text">
                             <h4>Alamat</h4>
-                            <p>Brayut, Pandowoharjo, Sleman, D.I. Yogyakarta</p>
+                            <p>Jl. Pendidikan No. 168, Kel. Malakaji, Kec. Tompobulu, Kab. Gowa, Sulawesi Selatan 92175</p>
                         </div>
                     </div>
                     
                     <div class="info-item">
                         <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
                         <div class="info-text">
-                            <h4>Nomor Telepon</h4>
-                            <p>(0274) 869775</p>
+                            <h4>Nomor Telepon / WA</h4>
+                            <p>+62 857 5634 9250</p>
                         </div>
                     </div>
                     
@@ -116,62 +122,76 @@
                         <div class="info-icon"><i class="fas fa-envelope-open-text"></i></div>
                         <div class="info-text">
                             <h4>Email Resmi</h4>
-                            <p>smanpandowo@gmail.com</p>
+                            <p>smpntompobulu1@gmail.com</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- PETA GOOGLE MAPS SMPN 1 TOMPOBULU GOWA -->
                 <div class="kontak-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.9482596489433!2d110.3601723!3d-7.6887556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5eb83f8cb20d%3A0xe10fa9503487f94c!2sSMA%20Negeri%202%20Sleman!5e0!3m2!1sid!2sid!4v1700000000000" width="100%" height="220" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://maps.google.com/maps?q=SMP+Negeri+1+Tompobulu+Gowa&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="220" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
-    <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
-        
-        <!-- 1. Baris Ikon Sosial Media -->
-        <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
-        </div>
-
-        <!-- 2. Baris Nama Sekolah & Garis Aksen Oranye Bawaan -->
-        <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-            <div style="text-transform: uppercase; letter-spacing: 1px;">
-                <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
+            
+            <!-- 1. Baris Ikon Sosial Media -->
+            <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
             </div>
-            <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
-        </div>
 
-        <!-- 3. Baris Alamat Lengkap & Tombol View on Google Maps -->
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-            <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
-    <span style="display: inline-block;">
-        <!-- Atur margin-right: 4px untuk menentukan kerapatan kiri-kanan -->
-        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
-        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
-    </span>
-</div>
-            <!-- Tombol View on Google Maps -->
-            <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
-                View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-            </a>
-        </div>
-
-        <!-- 4. Baris Informasi Kontak Lengkap -->
-        <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
-            <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
-
+            <!-- 2. Baris Nama Sekolah -->
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="text-transform: uppercase; letter-spacing: 1px;">
+                    <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+                </div>
+                <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
             </div>
-        
-            <p>&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+
+            <!-- 3. Baris Alamat Lengkap & Tombol View on Google Maps -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
+                    <span style="display: inline-block;">
+                        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
+                        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
+                    </span>
+                </div>
+                
+                <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
+                    View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+                </a>
+            </div>
+
+            <!-- 4. Baris Informasi Kontak Lengkap -->
+            <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
+                <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
+            </div>
+            
+            <p style="margin: 0;">&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT MOBILE MENU -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
 </html>

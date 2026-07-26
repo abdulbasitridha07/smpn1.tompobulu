@@ -10,6 +10,32 @@
 </head>
 <body>
 
+    <!-- ==========================================================================
+         SPLASH SCREEN / ANIMASI PEMBUKA & PEMUTAR MUSIK
+         ========================================================================== -->
+    <div id="splash-screen">
+        <div class="splash-logo-wrapper">
+            <img src="Images/Logosmp.png" alt="Logo SMP">
+        </div>
+        <h2>SMP Negeri 1 Tompobulu</h2>
+        <p>Membina Generasi Cerdas & Berkarakter</p>
+        <button id="btn-enter">
+            Masuk ke Website <i class="fas fa-sign-in-alt"></i>
+        </button>
+    </div>
+
+    <!-- AUDIO ELEMEN (Lagu Bagimu Negeri) -->
+    <audio id="bg-music">
+        <source src="Images/Bagimu Negeri - Archipelago Series - Epic Majestic Orchestral.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- TOMBOL KONTROL AUDIO MELAYANG -->
+    <button id="music-toggle" title="Matikan/Putar Musik"><i class="fas fa-volume-up"></i></button>
+
+
+    <!-- ==========================================================================
+         KONTEN UTAMA WEBSITE
+         ========================================================================== -->
     <!-- TOP BAR INFO -->
     <div class="top-bar">
         <div class="container">
@@ -28,29 +54,36 @@
     <!-- HEADER & NAVIGASI -->
     <header>
         <div class="container header-container">
-           <div class="logo-area">
-    <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
-    
-    <div class="logo-text">
-        <h1>SMP Negeri 1 Tompobulu</h1>
-        <p>Membina Generasi Cerdas & Berkarakter</p>
-    </div>
-</div>
-            <nav class="nav-menu">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        
-        <!-- MENU PROFIL DENGAN 4 SUB-MENU -->
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle">Profil <i class="fas fa-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-                <li><a href="Profil.html">Profil</a></li>
-                <li><a href="Sejarah.html">Sejarah</a></li>
-                <li><a href="Prestasi.html">Prestasi</a></li>
-                <li><a href="Organisasi.html">Organisasi</a></li>
-                <li><a href="Fasilitas.html">Fasilitas</a></li>
-            </ul>
-        </li>
+            <!-- Bagian Logo & Nama Sekolah -->
+            <div class="logo-area">
+                <img src="Images/Logosmp.png" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
+                <div class="logo-text">
+                    <h1>SMP Negeri 1 Tompobulu</h1>
+                    <p>Membina Generasi Cerdas & Berkarakter</p>
+                </div>
+            </div>
+
+            <!-- Tombol Hamburger untuk Mobile -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Navigasi Utama -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <!-- MENU PROFIL DENGAN SUB-MENU -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle active">Profil <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Profil.html" class="active">Profil</a></li>
+                            <li><a href="Sejarah.html">Sejarah</a></li>
+                            <li><a href="Prestasi.html">Prestasi</a></li>
+                            <li><a href="Organisasi.html">Organisasi</a></li>
+                            <li><a href="Fasilitas.html">Fasilitas</a></li>
+                        </ul>
+                    </li>
 
                     <li><a href="Visi Misi.html">Visi Misi</a></li>
                     <li><a href="guru.html">Guru & Staf</a></li>
@@ -67,6 +100,7 @@
         <h2 class="section-title">Profil Sekolah</h2>
         
         <div class="profile-container">
+            <!-- Sisi Kiri: Foto Kepala Sekolah -->
             <div class="profile-sidebar">
                 <div class="principal-card">
                     <img src="Images/Kepala Sekolah.jpeg" alt="Foto Kepala Sekolah" class="principal-img">
@@ -76,10 +110,11 @@
                     </div>
                 </div>
             </div>
-<!-- Sisi Kanan: Dibagi Menjadi Dua Kotak Putih Memisah -->
+
+            <!-- Sisi Kanan: Dibagi Menjadi Dua Kotak Putih Memisah -->
             <div class="profile-content-wrapper">
                 
-                <!-- KOTAK PERTAMA: SAMBUTAN (SEKARANG DI ATAS) -->
+                <!-- KOTAK PERTAMA: SAMBUTAN (DI ATAS) -->
                 <div class="profile-content">
                     <div class="content-section">
                         <h3>Sambutan Kepala Sekolah</h3>
@@ -90,7 +125,7 @@
                     </div>
                 </div>
 
-                <!-- KOTAK KEDUA: IDENTITAS SINGKAT (SEKARANG DI BAWAH) -->
+                <!-- KOTAK KEDUA: IDENTITAS SINGKAT (DI BAWAH) -->
                 <div class="profile-content" style="margin-top: 25px;">
                     <div class="content-section">
                         <h3>Identitas Singkat</h3>
@@ -113,58 +148,173 @@
                             </tr>
                             <tr>
                                 <td><strong>Alamat</strong></td>
-                                <td>Jl. Pendidikan, Tompobulu</td>
+                                <td>Jl. Pendidikan No. 168, Malakaji, Tompobulu</td>
                             </tr>
                         </table>
                     </div>
                 </div>
 
             </div> <!-- Akhir dari profile-content-wrapper -->
+        </div> <!-- Akhir dari profile-container -->
     </main>
 
-<footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
-    <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
-        
-        <!-- 1. Baris Ikon Sosial Media -->
-        <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
-        </div>
-
-        <!-- 2. Baris Nama Sekolah & Garis Aksen Oranye Bawaan -->
-        <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-            <div style="text-transform: uppercase; letter-spacing: 1px;">
-                <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+    <!-- FOOTER -->
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
+            
+            <!-- 1. Baris Ikon Sosial Media -->
+            <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
             </div>
-            <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
-        </div>
 
-        <!-- 3. Baris Alamat Lengkap & Tombol View on Google Maps -->
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-            <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
-    <span style="display: inline-block;">
-        <!-- Atur margin-right: 4px untuk menentukan kerapatan kiri-kanan -->
-        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
-        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
-    </span>
-</div>
-            <!-- Tombol View on Google Maps -->
-            <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
-                View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-            </a>
-        </div>
-
-        <!-- 4. Baris Informasi Kontak Lengkap -->
-        <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
-            <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
-
+            <!-- 2. Baris Nama Sekolah & Garis Aksen Oranye -->
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="text-transform: uppercase; letter-spacing: 1px;">
+                    <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+                </div>
+                <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
             </div>
-        
+
+            <!-- 3. Baris Alamat Lengkap & Tombol View on Google Maps -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
+                    <span style="display: inline-block;">
+                        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
+                        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
+                    </span>
+                </div>
+                <!-- Tombol View on Google Maps -->
+                <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
+                    View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+                </a>
+            </div>
+
+            <!-- 4. Baris Informasi Kontak Lengkap -->
+            <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
+                <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
+            </div>
+            
             <p>&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT LOGIKA SPLASH SCREEN, MUSIK & MOBILE MENU -->
+    <script>
+        const btnEnter = document.getElementById('btn-enter');
+        const splash = document.getElementById('splash-screen');
+        const music = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+
+        let isMusicPlaying = false; 
+        let isFading = false;
+
+        // Mendeteksi tipe navigasi halaman (Reload / First Visit / Menu Navigation)
+        let tipeNavigasi = "";
+        if (window.performance && window.performance.getEntriesByType) {
+            const navEntries = window.performance.getEntriesByType("navigation");
+            if (navEntries.length > 0) {
+                tipeNavigasi = navEntries[0].type; 
+            }
+        } else if (window.performance.navigation) {
+            if (window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+                tipeNavigasi = "reload";
+            }
+        }
+
+        // ATURAN SPLASH SCREEN & MUSIK
+        if (tipeNavigasi === "reload" || !sessionStorage.getItem('pernahMasukSesiIni')) {
+            if (splash) splash.style.display = 'flex';
+            sessionStorage.removeItem('pernahMasukSesiIni');
+        } else {
+            if (splash) splash.style.display = 'none';
+            if (musicToggle) musicToggle.style.display = 'none';
+            isMusicPlaying = false;
+        }
+
+        // SISTEM PENGUNCIAN LINK SAAT MUSIK BERPUTAR
+        const allLinks = document.querySelectorAll('.nav-menu a, .lockable-link');
+
+        function handleLinkClick(e) {
+            if (isMusicPlaying) {
+                e.preventDefault();
+                alert("Harap dengarkan lagu kebangsaan sampai selesai sebelum menjelajahi menu website.");
+            }
+        }
+
+        allLinks.forEach(link => {
+            if(link.getAttribute('href') !== '#') {
+                link.addEventListener('click', handleLinkClick);
+            }
+        });
+
+        // KETIKA TOMBOL MASUK DIKLIK
+        if (btnEnter) {
+            btnEnter.addEventListener('click', function() {
+                sessionStorage.setItem('pernahMasukSesiIni', 'true');
+
+                if (music) {
+                    music.volume = 1.0;
+                    music.currentTime = 69; // Mulai di detik ke-69
+                    music.play().then(() => {
+                        isMusicPlaying = true;
+                        if (musicToggle) musicToggle.style.display = 'none'; 
+                    }).catch(err => console.log("Musik tertahan browser:", err));
+                }
+
+                if (splash) {
+                    splash.style.opacity = '0';
+                    splash.style.visibility = 'hidden';
+                    splash.style.transform = 'translateY(-100%)';
+                    setTimeout(() => {
+                        splash.style.display = 'none';
+                    }, 600);
+                }
+            });
+        }
+
+        // FADE OUT OTOMATIS & MEMBUKA KUNCI MENU
+        if (music) {
+            music.addEventListener('timeupdate', function() {
+                if (music.currentTime >= 77 && !isFading) {
+                    isFading = true;
+                    let fadeInterval = setInterval(function() {
+                        if (music.volume > 0.1) {
+                            music.volume -= 0.1;
+                        } else {
+                            clearInterval(fadeInterval);
+                            music.pause();
+                            music.volume = 1.0; 
+                            isFading = false;
+                            isMusicPlaying = false; // Kunci terbuka otomatis
+                        }
+                    }, 200); 
+                }
+
+                if (music.currentTime >= 79) {
+                    music.pause();
+                    music.volume = 1.0;
+                    isFading = false;
+                    isMusicPlaying = false; // Kunci terbuka otomatis
+                }
+            });
+        }
+
+        // SCRIPT TOGGLE MOBILE MENU
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+        }
+    </script>
+</body>
 </html>

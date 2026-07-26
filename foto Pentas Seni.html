@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pentas Seni| SMP Negeri 1 Tompobulu</title>
+    <title>Pentas Seni | SMP Negeri 1 Tompobulu</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -27,6 +27,7 @@
     <!-- HEADER & NAVIGASI LENGKAP -->
     <header>
         <div class="container header-container">
+            <!-- AREA LOGO -->
             <div class="logo-area">
                 <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
                 <div class="logo-text">
@@ -34,7 +35,14 @@
                     <p>Membina Generasi Cerdas & Berkarakter</p>
                 </div>
             </div>
-            <nav class="nav-menu">
+
+            <!-- TOMBOL MOBILE MENU -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Buka Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- NAVIGASI UTAMA -->
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
@@ -51,7 +59,7 @@
                     <li><a href="guru.html">Guru & Staf</a></li>
                     <li><a href="SPMB.html">SPMB 2026</a></li>
                     <li><a href="Download.html">Download</a></li>
-                    <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+                    <li><a href="Hubungi Kami.html">Hubungi Kami</a></li>
                 </ul>
             </nav>
         </div>
@@ -65,30 +73,31 @@
         </a>
         
         <h2 class="section-title">Galeri: Pentas Seni</h2>
-        <!-- GRID DAFTAR FOTO -->
+        
+        <!-- GRID DAFTAR FOTO (MENGGARAH KE Images/) -->
         <div class="gallery-inner-grid">
             
             <!-- FOTO 1 -->
-            <div class="gallery-inner-item" onclick="openLightbox('belajar1.jpg')">
-                <img src="belajar1.jpg">
+            <div class="gallery-inner-item" onclick="openLightbox('Images/belajar1.jpg')">
+                <img src="Images/belajar1.jpg" alt="Pentas Seni 1">
                 <div class="inner-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
             
             <!-- FOTO 2 -->
-            <div class="gallery-inner-item" onclick="openLightbox('belajar2.jpg')">
-                <img src="belajar2.jpg">
+            <div class="gallery-inner-item" onclick="openLightbox('Images/belajar2.jpg')">
+                <img src="Images/belajar2.jpg" alt="Pentas Seni 2">
                 <div class="inner-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
             
             <!-- FOTO 3 -->
-            <div class="gallery-inner-item" onclick="openLightbox('belajar3.jpg')">
-                <img src="belajar3.jpg">
+            <div class="gallery-inner-item" onclick="openLightbox('Images/belajar3.jpg')">
+                <img src="Images/belajar3.jpg" alt="Pentas Seni 3">
                 <div class="inner-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
 
             <!-- FOTO 4 -->
-            <div class="gallery-inner-item" onclick="openLightbox('belajar4.jpg')">
-                <img src="belajar4.jpg">
+            <div class="gallery-inner-item" onclick="openLightbox('Images/belajar4.jpg')">
+                <img src="Images/belajar4.jpg" alt="Pentas Seni 4">
                 <div class="inner-overlay"><i class="fas fa-search-plus"></i></div>
             </div>
 
@@ -111,49 +120,102 @@
         </div>
     </div>
 
-   <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
-    <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
-        
-        <!-- 1. Baris Ikon Sosial Media -->
-        <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
-        </div>
-
-        <!-- 2. Baris Nama Sekolah & Garis Aksen Oranye Bawaan -->
-        <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-            <div style="text-transform: uppercase; letter-spacing: 1px;">
-                <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+    <!-- FOOTER -->
+    <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
+        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
+            
+            <!-- 1. Baris Ikon Sosial Media -->
+            <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
             </div>
-            <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
-        </div>
 
-        <!-- 3. Baris Alamat Lengkap & Tombol View on Google Maps -->
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-            <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
-    <span style="display: inline-block;">
-        <!-- Atur margin-right: 4px untuk menentukan kerapatan kiri-kanan -->
-        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
-        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
-    </span>
-</div>
-            <!-- Tombol View on Google Maps -->
-            <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
-                View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-            </a>
-        </div>
-
-        <!-- 4. Baris Informasi Kontak Lengkap -->
-        <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
-            <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
-
+            <!-- 2. Baris Nama Sekolah & Garis Aksen Oranye Bawaan -->
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="text-transform: uppercase; letter-spacing: 1px;">
+                    <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+                </div>
+                <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
             </div>
-        
-            <p>&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+
+            <!-- 3. Baris Alamat Lengkap & Tombol View on Google Maps -->
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
+                    <span style="display: inline-block;">
+                        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
+                        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
+                    </span>
+                </div>
+                <!-- Tombol View on Google Maps -->
+                <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
+                    View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+                </a>
+            </div>
+
+            <!-- 4. Baris Informasi Kontak Lengkap -->
+            <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
+                <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
+            </div>
+
+            <p style="font-size: 12px; color: #888;">&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT NAVIGASI MOBILE & LIGHTBOX -->
+    <script>
+        // Toggle Navigasi Mobile
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileBtn.querySelector('i').classList.toggle('fa-bars');
+                mobileBtn.querySelector('i').classList.toggle('fa-times');
+            });
+        }
+
+        // Dropdown Navigasi Mobile
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdownMenu = toggle.nextElementSibling;
+                    dropdownMenu.classList.toggle('show');
+                }
+            });
+        });
+
+        // Kontrol Pop-up Lightbox Galeri
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('galleryLightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxDownloadBtn = document.getElementById('lightboxDownloadBtn');
+
+            lightboxImg.src = imgSrc;
+            lightboxDownloadBtn.href = imgSrc;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('galleryLightbox');
+            lightbox.style.display = 'none';
+        }
+
+        // Tutup Lightbox saat klik area hitam di luar gambar
+        window.addEventListener('click', (e) => {
+            const lightbox = document.getElementById('galleryLightbox');
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
 </html>

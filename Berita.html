@@ -24,9 +24,10 @@
         </div>
     </div>
 
-    <!-- HEADER & NAVIGASI LENGKAP -->
+    <!-- HEADER & NAVIGASI -->
     <header>
         <div class="container header-container">
+            <!-- 1. AREA LOGO -->
             <div class="logo-area">
                 <img src="Images/logo smp.jpg" alt="Logo SMP Negeri 1 Tompobulu" style="width: 60px; height: 60px; object-fit: contain;">
                 <div class="logo-text">
@@ -34,7 +35,14 @@
                     <p>Membina Generasi Cerdas & Berkarakter</p>
                 </div>
             </div>
-            <nav class="nav-menu">
+
+            <!-- 2. TOMBOL HAMBURGER (HP) -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Buka Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- 3. NAVIGASI UTAMA -->
+            <nav class="nav-menu" id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li class="dropdown">
@@ -71,11 +79,11 @@
                     </div>
                     <div class="main-news-body">
                         <span class="news-page-tag">Prestasi</span>
-                        <h3 class="main-news-title">Tim Mahasiswa SMP Negeri 1 Tompobulu Raih 8 Penghargaan di Ajang Peksimiprov 2026</h3>
+                        <h3 class="main-news-title">Tim Siswa SMP Negeri 1 Tompobulu Raih 8 Penghargaan di Ajang Peksimiprov 2026</h3>
                         <p class="news-page-meta"><i class="far fa-calendar"></i> 19 Juli 2026 | oleh Admin</p>
                         
                         <div class="main-news-content">
-                            <p>Kabar membanggakan kembali datang dari perwakilan siswa-siswi terbaik SMP Negeri 1 Tompobulu. Dalam ajang bergengsi Pekan Seni Mahasiswa dan Pelajar Provinsi (Peksimiprov) tahun 2026, tim sekolah sukses memborong total 8 penghargaan sekaligus di berbagai kategori perlombaan seni.</p>
+                            <p>Kabar membanggakan kembali datang dari perwakilan siswa-siswi terbaik SMP Negeri 1 Tompobulu. Dalam ajang bergengsi Pekan Seni Pelajar Provinsi (Peksimiprov) tahun 2026, tim sekolah sukses memborong total 8 penghargaan sekaligus di berbagai kategori perlombaan seni.</p>
                             <p>Kepala Sekolah menyampaikan apresiasi setinggi-tingginya atas dedikasi dan kerja keras para siswa serta guru pembimbing yang telah berjuang mengharumkan nama sekolah di tingkat provinsi. Prestasi ini diharapkan menjadi pemacu semangat bagi seluruh siswa untuk terus menggali potensi diri...</p>
                         </div>
                     </div>
@@ -123,49 +131,71 @@
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer style="background-color: #1a1a1a; color: #ffffff; padding: 50px 20px; font-family: sans-serif; border-top: 4px solid #ffa500;">
-    <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
-        
-        <!-- 1. Baris Ikon Sosial Media -->
-        <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
-        </div>
-
-        <!-- 2. Baris Nama Sekolah & Garis Aksen Oranye Bawaan -->
-        <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-            <div style="text-transform: uppercase; letter-spacing: 1px;">
-                <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+        <div class="container" style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 30px; text-align: center;">
+            
+            <div class="footer-social-icons" style="display: flex; gap: 20px; font-size: 22px;">
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #ffffff; transition: opacity 0.2s;"><i class="fab fa-tiktok"></i></a>
             </div>
-            <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
-        </div>
 
-        <!-- 3. Baris Alamat Lengkap & Tombol View on Google Maps -->
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
-            <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
-    <span style="display: inline-block;">
-        <!-- Atur margin-right: 4px untuk menentukan kerapatan kiri-kanan -->
-        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
-        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
-    </span>
-</div>
-            <!-- Tombol View on Google Maps -->
-            <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
-                View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
-            </a>
-        </div>
-
-        <!-- 4. Baris Informasi Kontak Lengkap -->
-        <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
-            <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
-            <span style="color: rgba(255,255,255,0.2);">|</span>
-            <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
-
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <div style="text-transform: uppercase; letter-spacing: 1px;">
+                    <div style="color: #ffffff; font-size: 22px; font-weight: 700; line-height: 1.2;">SMP Negeri 1 Tompobulu</div>
+                </div>
+                <div style="width: 50px; height: 3px; background-color: #ffa500; margin-top: 4px;"></div>
             </div>
-        
-            <p>&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                <div class="footer-address" style="font-size: 15px; color: #cccccc; max-width: 650px; line-height: 1.6; text-align: center;">
+                    <span style="display: inline-block;">
+                        <i class="fas fa-map-marker-alt" style="color: #ffa500; margin-right: 4px;"></i>
+                        Jl. Pendidikan No. 168, Kelurahan Malakaji, Kecamatan Tompobulu, Kabupaten Gowa, Sulawesi Selatan 92175
+                    </span>
+                </div>
+                <a href="https://maps.app.goo.gl/St6UZPb3b4qgzPNY8" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; color: #ffa500; text-decoration: none; font-size: 13px; font-weight: 600; border: 1px solid rgba(255, 165, 0, 0.4); padding: 5px 14px; border-radius: 20px; transition: all 0.2s; background: rgba(255, 165, 0, 0.05);" onmouseover="this.style.background='rgba(255, 165, 0, 0.15)';" onmouseout="this.style.background='rgba(255, 165, 0, 0.05)';">
+                    View on Google Maps <i class="fas fa-arrow-up-right-from-square" style="font-size: 11px;"></i>
+                </a>
+            </div>
+
+            <div class="footer-contacts" style="font-size: 14px; color: #bbbbbb; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; width: 100%;">
+                <span><i class="fas fa-envelope" style="color: #ffa500; margin-right: 4px;"></i> <strong>E:</strong> smpntompobulu1@gmail.com</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fas fa-phone" style="color: #ffa500; margin-right: 4px;"></i> <strong>P:</strong> +62 857 5634 9250</span>
+                <span style="color: rgba(255,255,255,0.2);">|</span>
+                <span><i class="fab fa-whatsapp" style="color: #ffa500; margin-right: 4px;"></i> <strong>WA:</strong> +62 857 5634 9250</span>
+            </div>
+            
+            <p style="font-size: 12px; color: #888;">&copy; 2026 SMP Negeri 1 Tompobulu. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT NAVIGASI MOBILE (HP) -->
+    <script>
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (mobileBtn && navMenu) {
+            mobileBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                mobileBtn.querySelector('i').classList.toggle('fa-bars');
+                mobileBtn.querySelector('i').classList.toggle('fa-times');
+            });
+        }
+
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdownMenu = toggle.nextElementSibling;
+                    dropdownMenu.classList.toggle('show');
+                }
+            });
+        });
+    </script>
+</body>
 </html>

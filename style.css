@@ -3298,3 +3298,94 @@ footer {
         box-shadow: 0 2px 6px rgba(239, 68, 68, 0.2);
     }
 </style>
+
+/* ==========================================
+   ATURAN TAMPILAN LAYAR HP (Maksimal 768px)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    /* Sembunyikan top-bar kontak yang terlalu panjang */
+    .top-bar .top-info {
+        font-size: 11px;
+    }
+    
+    /* Posisikan Logo & Tombol Hamburger Sejajar */
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
+        position: relative;
+    }
+
+    /* Munculkan Tombol Hamburger */
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 22px;
+        color: #333;
+        cursor: pointer;
+    }
+
+    /* Sembunyikan Menu Biasa, Ubah Jadi Menu Dropdown Vertikal */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        z-index: 999;
+    }
+
+    /* Saat Tombol Hamburger Diklik (Kelas Active) */
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu ul li a {
+        padding: 12px 20px;
+        display: block;
+    }
+
+    /* Sub-menu Dropdown di HP */
+    .dropdown-menu {
+        position: static;
+        display: none;
+        box-shadow: none;
+        background-color: #f8f9fa;
+        padding-left: 15px;
+    }
+
+    .dropdown-menu.show {
+        display: block;
+    }
+
+    /* Ubah Semua Grid 2-3 Kolom Menjadi 1 Kolom Ringkas di HP */
+    .main-layout, 
+    .stats-grid, 
+    .news-grid, 
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+        flex-direction: column;
+    }
+}
+
+/* Sembunyikan Tombol Hamburger di Layar Laptop/Komputer */
+@media screen and (min-width: 769px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}

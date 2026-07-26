@@ -4582,175 +4582,76 @@ footer {
     background-color: #e07b00;
     transform: translateY(-1px);
 }
-
 /* ==========================================================================
-   12. TAMPILAN KHUSUS HP / MOBILE (PURE CSS MENU - KODE DIPERBAIKI TOTAL)
+   PERBAIKAN MUTLAK MOBILE MENU & DROPDOWN (PASTI BERHASIL)
    ========================================================================== */
-@media (max-width: 992px) {
-    .main-layout {
-        flex-direction: column;
-    }
-}
+@media screen and (max-width: 768px) {
 
-@media (max-width: 768px) {
-    /* Merapikan Header HP */
-    .header-container {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-
-    /* MUNCULKAN TOMBOL GARIS TIGA DI HP */
-    .menu-toggle {
-        display: inline-block !important;
-        z-index: 1001 !important;
-        cursor: pointer !important;
-    }
-
-    /* SEMBUNYIKAN MENU UTAMA SECARA ABSOLUT DI HP */
-    .nav-menu {
+    /* 1. Paksa SEMUA Nav Menu Utama Hilang dari Layar HP */
+    body header .header-container .nav-menu {
         display: none !important;
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
         width: 100% !important;
         background-color: #ffffff !important;
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
-        padding: 15px 20px !important;
-        z-index: 1000 !important;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
         border-top: 3px solid #ffa500 !important;
+        padding: 10px 15px !important;
+        margin-top: 10px !important;
     }
 
-    /* TRIK PURE CSS: Buka Menu Saat Tombol Garis 3 Di-Klik / Di-Tekan / Di-Hover */
-    .menu-toggle:focus + .nav-menu,
-    .menu-toggle:hover + .nav-menu,
-    .nav-menu:hover,
-    .header-container:hover .nav-menu {
+    /* 2. Munculkan Menu Utama Hanya Saat Header / Garis 3 Disentuh atau Di-hover */
+    body header .header-container:hover .nav-menu,
+    body header .header-container:focus-within .nav-menu {
         display: block !important;
     }
 
-    /* Menyusun Daftar Menu Menjadi Berjajar ke Bawah di HP */
-    .nav-menu ul {
+    /* 3. Susun Menu dari Atas ke Bawah (Lurus Rapi) */
+    body header .nav-menu ul {
+        display: flex !important;
         flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 0 !important;
         width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
-    .nav-menu li {
+    body header .nav-menu ul li {
         width: 100% !important;
-        border-bottom: 1px solid #f0f0f0 !important;
+        display: block !important;
+        border-bottom: 1px solid #eeeeee !important;
     }
 
-    .nav-menu li:last-child {
-        border-bottom: none !important;
-    }
-
-    .nav-menu a {
-        padding: 12px 0 !important;
+    body header .nav-menu ul li a {
+        display: block !important;
+        padding: 10px 0 !important;
         width: 100% !important;
-        font-size: 14px !important;
+        text-align: left !important;
     }
 
-    .nav-menu a::after {
+    /* 4. SEMBUNYIKAN Sub-menu / Dropdown Profil Dulu agar Tidak Tumpah */
+    body header .nav-menu ul li.dropdown .dropdown-menu {
         display: none !important;
-    }
-
-    /* Tampilan Sub-Menu (Dropdown Profil) di HP */
-    .nav-menu .dropdown-menu {
-        position: static !important;
+        position: static !important; /* Agar tidak melayang ke luar layar */
+        width: 100% !important;
         box-shadow: none !important;
         border-top: none !important;
-        background-color: #f9f9f9 !important;
-        padding: 0 0 0 15px !important;
-        width: 100% !important;
         border-left: 3px solid #ffa500 !important;
-        margin-bottom: 10px !important;
+        background-color: #f8f9fa !important;
+        margin: 5px 0 !important;
+        padding: 5px 0 5px 12px !important;
     }
 
-    .nav-menu .dropdown-menu li {
+    /* 5. MUNCULKAN Sub-menu Profil HANYA SAAT MOUSE/JARI MENYENTUH MENU PROFIL */
+    body header .nav-menu ul li.dropdown:hover .dropdown-menu,
+    body header .nav-menu ul li.dropdown:focus-within .dropdown-menu {
+        display: block !important;
+    }
+
+    body header .nav-menu ul li.dropdown .dropdown-menu li {
         border-bottom: none !important;
     }
 
-    .nav-menu .dropdown-menu li a {
-        padding: 8px 10px !important;
+    body header .nav-menu ul li.dropdown .dropdown-menu li a {
+        padding: 6px 8px !important;
         font-size: 13px !important;
-    }
-
-    /* Elemen Lainnya di Layar HP */
-    .top-bar .container {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .hero-left-align .hero-content {
-        text-align: center !important;
-        align-items: center !important;
-        padding-left: 0 !important;
-    }
-
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content h2 {
-        font-size: 26px;
-    }
-
-    .stats-small {
-        margin-top: 20px !important;
-        padding: 20px !important;
-        max-width: calc(100% - 30px) !important;
-    }
-
-    .stats-small .stats-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-    }
-
-    .stats-small .stats-card {
-        flex-direction: column !important;
-        gap: 8px !important;
-        text-align: center !important;
-        border-right: none !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-        padding-bottom: 15px !important;
-    }
-
-    .stats-small .stats-card:last-child {
-        border-bottom: none !important;
-        padding-bottom: 0 !important;
-    }
-
-    .stats-small .stats-info {
-        text-align: center !important;
-    }
-
-    .modern-mission-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .modern-vision-card {
-        padding: 25px;
-    }
-
-    .modern-vision-card blockquote {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 576px) {
-    .download-list li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .btn-download {
-        width: 100%;
-        justify-content: center;
+        color: #555555 !important;
     }
 }

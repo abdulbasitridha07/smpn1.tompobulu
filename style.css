@@ -3431,22 +3431,226 @@ footer {
     z-index: 99999 !important;
     border-top: 3px solid #ff8c00 !important;
 }
+/* ==========================================================================
+   1. RESET STYLES, TYPOGRAPHY & SMOOTH SCROLL
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #f4f7f4;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #333333;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+a:hover {
+    color: #ffa500;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
 
 /* ==========================================================================
-   2. INTERAKSI HOVER DROPDOWN & STYLING SUB-MENU
+   2. TOP BAR
    ========================================================================== */
-
-/* Tampilkan Dropdown saat menu utama/Profil di-hover */
-.nav-menu li.dropdown:hover > .dropdown-menu {
-    display: block !important;
+.top-bar {
+    background-color: #ffa500;
+    color: #ffffff;
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 4px solid #ffffff;
+    position: relative;
+    z-index: 100;
 }
 
-/* Putar ikon panah ke atas saat menu di-hover */
-.nav-menu li.dropdown:hover > a i {
-    transform: rotate(180deg);
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Styling item menu di dalam dropdown */
+.top-info span {
+    margin-right: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.top-info span:hover {
+    opacity: 0.85;
+}
+
+.top-social a {
+    color: #ffffff;
+    margin-left: 15px;
+    font-size: 14px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.top-social a:hover {
+    color: #1a5c21;
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* ==========================================================================
+   3. HEADER BAR, NAVIGASI MENU & DROPDOWN (DESKTOP)
+   ========================================================================== */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.logo-area:hover .logo {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.logo-text h1 {
+    font-size: 22px;
+    color: #1a5c21;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.logo-text p {
+    font-size: 11px;
+    color: #666666;
+    text-transform: uppercase;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+/* Tombol Garis Tiga (Desktop: Sembunyi) */
+.menu-toggle {
+    display: none;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: #1a5c21;
+    cursor: pointer;
+    padding: 5px 10px;
+    outline: none;
+}
+
+/* Navigasi Utama Desktop */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-menu a {
+    font-weight: 700;
+    font-size: 13px;
+    color: #444444;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+}
+
+.nav-menu ul li a i {
+    font-size: 10px;
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ffa500;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 80%;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #ffa500;
+}
+
+/* Dropdown Menu Desktop */
+.nav-menu .dropdown-menu {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background-color: #ffffff !important;
+    min-width: 220px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+    border-radius: 6px !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
+    z-index: 99999 !important;
+    border-top: 3px solid #ff8c00 !important;
+}
+
 .nav-menu .dropdown-menu li {
     display: block !important;
     width: 100% !important;
@@ -3462,9 +3666,1091 @@ footer {
     transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease !important;
 }
 
-/* Hover state untuk item dropdown */
+.nav-menu .dropdown-menu li a::after {
+    display: none !important;
+}
+
 .nav-menu .dropdown-menu li a:hover {
     background-color: #fffaf5 !important;
     color: #ff8c00 !important;
-    padding-left: 22px !important; /* Efek bergeser halus */
+    padding-left: 22px !important;
+}
+
+.nav-menu li.dropdown:hover > .dropdown-menu {
+    display: block !important;
+}
+
+.nav-menu li.dropdown:hover > a i {
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   4. HERO BANNER VISUAL
+   ========================================================================== */
+.hero {
+    position: relative;
+    background: #ffa500 url('Images/smpn1.jpeg') no-repeat center center/cover;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+    padding: 0 20px;
+}
+
+.hero-left-align .hero-content {
+    text-align: left !important;
+    align-items: flex-start !important;
+    margin-left: 0 !important;
+    padding-left: 5% !important; 
+}
+
+.hero-content h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+    animation: fadeInUp 1s ease-out;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    background-color: #ffa500;
+    color: #ffffff;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(255, 165, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.btn-primary i {
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e69500;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 165, 0, 0.5);
+}
+
+.btn-primary:hover i {
+    transform: translateY(3px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   5. SECTION STATISTIK SEKOLAH
+   ========================================================================== */
+.stats-small {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32) !important;
+    padding: 18px 0 !important;
+    margin-top: -25px !important;
+    position: relative !important;
+    z-index: 10 !important;
+    border-radius: 8px !important;
+    max-width: 850px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-shadow: 0 10px 30px rgba(27, 94, 32, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.stats-small .stats-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    text-align: center !important;
+}
+
+.stats-small .stats-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    color: #ffffff !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.stats-small .stats-card:last-child {
+    border-right: none !important;
+}
+
+.stats-small .stats-icon {
+    font-size: 26px !important;
+    color: #ffa500 !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.stats-small .stats-card:hover .stats-icon {
+    transform: scale(1.2) rotate(8deg) !important;
+}
+
+.stats-small .stats-info {
+    text-align: left !important;
+}
+
+.stats-small .stats-number {
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+.stats-small .stats-label {
+    font-size: 11.5px !important;
+    margin: 0 !important;
+    opacity: 0.85 !important;
+    font-weight: 500 !important;
+}
+
+/* ==========================================================================
+   6. TATA LETAK MAJALAH & SIDEBAR
+   ========================================================================== */
+.main-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.news-section {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+}
+
+.section-title {
+    font-size: 20px;
+    color: #ffa500;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ffa500;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    background-color: #1a5c21;
+    bottom: -3px;
+    left: 0;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.news-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.07);
+    border-color: #ffa500;
+}
+
+.news-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.news-img img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.news-card:hover .news-img img {
+    transform: scale(1.08);
+}
+
+.news-body {
+    padding: 20px;
+}
+
+.news-tag {
+    background: #ffa500;
+    color: #ffffff;
+    padding: 4px 10px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.news-card:hover .news-tag {
+    background: #1a5c21;
+}
+
+.news-body h3 {
+    font-size: 16px;
+    margin: 12px 0 6px 0;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.news-body h3 a {
+    color: #333333;
+}
+
+.news-body h3 a:hover {
+    color: #ffa500;
+}
+
+.news-meta {
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 12px;
+}
+
+.news-meta i {
+    color: #ffa500;
+    margin-right: 5px;
+}
+
+.news-excerpt {
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.btn-readmore {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffa500;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-readmore::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.btn-readmore:hover {
+    color: #1a5c21;
+}
+
+.btn-readmore:hover::after {
+    transform: translateX(4px);
+}
+
+.placeholder-img {
+    width: 100%;
+    height: 180px;
+    background-color: #e8efe9;
+    color: #1a5c21;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.widget {
+    background: #ffffff;
+    padding: 25px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.widget:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    border-color: rgba(255, 165, 0, 0.3);
+}
+
+.widget-title {
+    font-size: 15px;
+    color: #ffa500;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: #ffa500;
+    bottom: -2px;
+    left: 0;
+}
+
+.kepsek-widget {
+    text-align: center;
+}
+
+.kepsek-img-placeholder {
+    width: 110px;
+    height: 140px;
+    background-color: #e8efe9;
+    color: #1a5c21;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 3px solid #f4f6f4;
+    margin: 0 auto 15px auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.widget:hover .kepsek-img-placeholder {
+    transform: scale(1.03);
+}
+
+.kepsek-widget p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.agenda-list {
+    list-style: none;
+}
+
+.agenda-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px dashed #e2e8f0;
+    transition: padding-left 0.3s ease;
+}
+
+.agenda-list li:hover {
+    padding-left: 5px;
+}
+
+.agenda-list li:last-child {
+    border-bottom: none;
+}
+
+.date-badge {
+    background-color: #ffa500;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 8px 10px;
+    border-radius: 6px;
+    min-width: 52px;
+    font-size: 11px;
+    text-transform: uppercase;
+    box-shadow: 0 3px 8px rgba(255, 165, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.agenda-list li:hover .date-badge {
+    background-color: #1a5c21;
+}
+
+.agenda-list p {
+    font-size: 13px;
+    color: #333333;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   7. GALERI FOTO SEKOLAH
+   ========================================================================== */
+.gallery-section {
+    padding: 60px 0 !important;
+    background-color: #ffffff !important;
+    border-top: 1px solid #eef2f5 !important;
+    border-bottom: 1px solid #eef2f5 !important;
+}
+
+.gallery-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 20px !important;
+    margin-top: 30px !important;
+}
+
+.gallery-item {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03) !important;
+    background-color: #ffffff !important;
+    border: 1px solid #eef2f5 !important;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px) !important;
+}
+
+.gallery-img-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 180px !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+}
+
+.gallery-placeholder-img {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #e3ebd3 !important;
+    color: #1b5e20 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.gallery-item:hover .gallery-placeholder-img {
+    transform: scale(1.08) !important;
+}
+
+.gallery-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(27, 94, 32, 0.9) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1 !important;
+}
+
+.gallery-icon {
+    color: #ffa500 !important;
+    font-size: 24px !important;
+    margin-bottom: 8px !important;
+    transform: translateY(15px) !important;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.gallery-overlay h4 {
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    transform: translateY(15px) !important;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.gallery-item:hover .gallery-icon, 
+.gallery-item:hover .gallery-overlay h4 {
+    transform: translateY(0) !important;
+}
+
+/* ==========================================================================
+   8. FOOTER BLOK
+   ========================================================================== */
+footer {
+    background-color: #1a1a1a;
+    color: #aaaaaa;
+    padding-top: 50px;
+    font-size: 13px;
+    border-top: 5px solid #ffa500;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 2px;
+    background-color: #ffa500;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-col p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.footer-col i {
+    color: #ffa500;
+    margin-right: 10px;
+    width: 15px;
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #2a2a2a;
+}
+
+.map-placeholder {
+    background-color: #222222;
+    padding: 20px;
+    text-align: center;
+    border-radius: 6px;
+    color: #888888;
+}
+
+.map-placeholder i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #ffa500;
+}
+
+.footer-bottom {
+    background-color: #101010;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 12px;
+    color: #555555;
+    border-top: 1px solid #222222;
+}
+
+/* ==========================================================================
+   9. HALAMAN GURU & STAF
+   ========================================================================== */
+.teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.teacher-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #eef2f5;
+    text-align: center;
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(255, 140, 0, 0.15);
+    border-color: #ff8c00;
+}
+
+.teacher-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background-color: #f5f5f5;
+    transition: transform 0.3s ease;
+}
+
+.teacher-card:hover img {
+    transform: scale(1.03);
+}
+
+.teacher-info {
+    padding: 20px 15px;
+    background-color: #ffffff;
+}
+
+.teacher-info h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.teacher-info .role {
+    font-size: 13px;
+    color: #ff8c00;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.teacher-info .nip {
+    font-size: 11px;
+    color: #7f8c8d;
+    background-color: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   10. HALAMAN VISI, MISI, & TUJUAN SEKOLAH
+   ========================================================================== */
+.vision-mission-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.vision-mission-hero p {
+    color: #718096;
+    font-size: 16px;
+    max-width: 700px;
+    margin: 10px auto 0 auto;
+    line-height: 1.6;
+}
+
+.modern-vm-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.vm-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1b5e20;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(27, 94, 32, 0.15);
+}
+
+.modern-vision-card {
+    background: #ffffff;
+    border-left: 5px solid #1b5e20;
+    padding: 35px;
+    border-radius: 4px 14px 14px 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    border-top: 1px solid #edf2f7;
+    border-right: 1px solid #edf2f7;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.modern-vision-card blockquote {
+    font-size: 22px;
+    color: #2d3748;
+    font-weight: 600;
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+}
+
+.modern-mission-section {
+    width: 100%;
+}
+
+.modern-mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+    gap: 25px;
+    margin-top: 5px;
+}
+
+.mission-card {
+    background: #ffffff;
+    border: 1px solid #edf2f7;
+    padding: 25px;
+    border-radius: 14px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.mission-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1b5e20;
+    opacity: 0.25;
+    line-height: 1;
+    font-family: Arial, sans-serif;
+}
+
+.mission-content h4 {
+    margin: 0 0 8px 0;
+    color: #2d3748;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.mission-content p {
+    margin: 0;
+    color: #4a5568;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.target-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.target-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* ==========================================================================
+   11. STYLE HALAMAN SPMB
+   ========================================================================== */
+.spmb-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eef2f5;
+}
+
+.spmb-poster-box {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px dashed #eef2f5;
+}
+
+.poster-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 4px solid #ffffff;
+    background-color: #f5f5f5;
+}
+
+.poster-caption {
+    font-size: 13px;
+    color: #666666;
+    margin-top: 12px;
+    font-style: italic;
+}
+
+.spmb-download-box h3 {
+    font-size: 18px;
+    color: #ff8c00;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.spmb-download-box > p {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.download-list {
+    list-style: none;
+    padding: 0;
+}
+
+.download-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fffaf5;
+    padding: 15px 20px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    border: 1px solid #ffeacc;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.pdf-icon {
+    font-size: 28px;
+    color: #e74c3c;
+}
+
+.file-info strong {
+    display: block;
+    font-size: 14px;
+    color: #333333;
+}
+
+.file-size {
+    font-size: 11px;
+    color: #888888;
+}
+
+.btn-download {
+    background-color: #ff8c00;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-download:hover {
+    background-color: #e07b00;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   12. TAMPILAN KHUSUS HP / MOBILE (PURE CSS MENU - KODE DIPERBAIKI TOTAL)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .main-layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Merapikan Header HP */
+    .header-container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    /* MUNCULKAN TOMBOL GARIS TIGA DI HP */
+    .menu-toggle {
+        display: inline-block !important;
+        z-index: 1001 !important;
+        cursor: pointer !important;
+    }
+
+    /* SEMBUNYIKAN MENU UTAMA SECARA ABSOLUT DI HP */
+    .nav-menu {
+        display: none !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background-color: #ffffff !important;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+        padding: 15px 20px !important;
+        z-index: 1000 !important;
+        border-top: 3px solid #ffa500 !important;
+    }
+
+    /* TRIK PURE CSS: Buka Menu Saat Tombol Garis 3 Di-Klik / Di-Tekan / Di-Hover */
+    .menu-toggle:focus + .nav-menu,
+    .menu-toggle:hover + .nav-menu,
+    .nav-menu:hover,
+    .header-container:hover .nav-menu {
+        display: block !important;
+    }
+
+    /* Menyusun Daftar Menu Menjadi Berjajar ke Bawah di HP */
+    .nav-menu ul {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        width: 100% !important;
+    }
+
+    .nav-menu li {
+        width: 100% !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none !important;
+    }
+
+    .nav-menu a {
+        padding: 12px 0 !important;
+        width: 100% !important;
+        font-size: 14px !important;
+    }
+
+    .nav-menu a::after {
+        display: none !important;
+    }
+
+    /* Tampilan Sub-Menu (Dropdown Profil) di HP */
+    .nav-menu .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        border-top: none !important;
+        background-color: #f9f9f9 !important;
+        padding: 0 0 0 15px !important;
+        width: 100% !important;
+        border-left: 3px solid #ffa500 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .nav-menu .dropdown-menu li {
+        border-bottom: none !important;
+    }
+
+    .nav-menu .dropdown-menu li a {
+        padding: 8px 10px !important;
+        font-size: 13px !important;
+    }
+
+    /* Elemen Lainnya di Layar HP */
+    .top-bar .container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .hero-left-align .hero-content {
+        text-align: center !important;
+        align-items: center !important;
+        padding-left: 0 !important;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h2 {
+        font-size: 26px;
+    }
+
+    .stats-small {
+        margin-top: 20px !important;
+        padding: 20px !important;
+        max-width: calc(100% - 30px) !important;
+    }
+
+    .stats-small .stats-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .stats-small .stats-card {
+        flex-direction: column !important;
+        gap: 8px !important;
+        text-align: center !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        padding-bottom: 15px !important;
+    }
+
+    .stats-small .stats-card:last-child {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+    }
+
+    .stats-small .stats-info {
+        text-align: center !important;
+    }
+
+    .modern-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .modern-vision-card {
+        padding: 25px;
+    }
+
+    .modern-vision-card blockquote {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .download-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .btn-download {
+        width: 100%;
+        justify-content: center;
+    }
 }

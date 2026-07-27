@@ -4644,7 +4644,7 @@ footer {
         display: flex !important;
         flex-direction: column !important;
         width: 100% !important;
-        gap: 2px !important;
+        gap: 6px !important;
         margin: 0 !important;
         padding: 0 !important;
         list-style: none !important;
@@ -4664,35 +4664,37 @@ footer {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding: 10px 8px !important;
+        padding: 12px 10px !important;
         width: 100% !important;
         color: #333333 !important;
         font-weight: 600 !important;
         font-size: 15px !important;
         text-decoration: none !important;
         box-sizing: border-box !important;
+        transition: color 0.2s ease !important;
     }
 
     body header .nav-menu ul li a:hover {
         color: #1a5c21 !important;
     }
 
-    /* 5. PERBAIKAN DROPDOWN PROFIL (Tampil Rapat, Tidak Berjarak & Nama Sub-menu Muncul Jelas) */
-    body header .nav-menu ul li.dropdown {
-        position: relative !important;
-    }
-
+    /* 5. PERBAIKAN MUTLAK DROPDOWN PROFIL (Menempel Rapi di Bawah, Tidak Melayang Keluar) */
     body header .nav-menu ul li.dropdown .dropdown-menu {
-        display: block !important; /* Memunculkan sub-menu secara permanen di HP agar langsung terlihat */
-        position: static !important;
+        display: none !important; /* Tersembunyi sebelum diklik/disentuh */
+        position: static !important; /* KUNCI UTAMA: Agar tidak melayang ke samping */
         width: 100% !important;
         box-shadow: none !important;
         background-color: #f8f9fa !important;
         border-radius: 6px !important;
-        border-left: 3px solid #1a5c21 !important;
-        margin: 2px 0 6px 0 !important;
-        padding: 4px 10px !important;
+        margin: 6px 0 10px 0 !important;
+        padding: 6px 12px !important;
         box-sizing: border-box !important;
+    }
+
+    /* Munculkan Sub-menu Saat Profil Disentuh/Di-hover */
+    body header .nav-menu ul li.dropdown:hover .dropdown-menu,
+    body header .nav-menu ul li.dropdown:focus-within .dropdown-menu {
+        display: block !important;
     }
 
     body header .nav-menu ul li.dropdown .dropdown-menu li {
@@ -4704,14 +4706,14 @@ footer {
     }
 
     body header .nav-menu ul li.dropdown .dropdown-menu li a {
-        padding: 8px 6px !important;
+        padding: 10px 8px !important;
         font-size: 13.5px !important;
         font-weight: 500 !important;
-        color: #444444 !important;
+        color: #555555 !important;
     }
 
     body header .nav-menu ul li.dropdown .dropdown-menu li a:hover {
         color: #1a5c21 !important;
-        padding-left: 10px !important;
+        padding-left: 12px !important; /* Efek bergeser halus ala web modern */
     }
 }

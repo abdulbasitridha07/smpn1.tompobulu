@@ -4682,3 +4682,38 @@ footer {
         background: transparent !important;
     }
 }
+@media screen and (max-width: 768px) {
+    /* Paksa kotak sub-menu profil terbuka dan berbaris rapi ke bawah di HP */
+    .nav-menu .dropdown-menu {
+        display: block !important;
+        position: static !important;
+        float: none !important;
+        width: 100% !important;
+        background-color: #f8f9fa !important;
+        border-left: 3px solid #1a5c21 !important;
+        margin: 5px 0 !important;
+        padding: 5px 10px !important;
+        box-shadow: none !important;
+    }
+
+    /* Merapikan jarak antar nama sub-menu */
+    .nav-menu .dropdown-menu li {
+        display: block !important;
+        width: 100% !important;
+        border-bottom: 1px solid #e9ecef !important;
+    }
+
+    .nav-menu .dropdown-menu li:last-child {
+        border-bottom: none !important;
+    }
+
+    /* Memastikan teks nama sub-menu terlihat jelas dan tidak terpotong */
+    .nav-menu .dropdown-menu li a {
+        display: block !important;
+        padding: 10px 8px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        color: #333333 !important;
+        background: transparent !important;
+    }
+}

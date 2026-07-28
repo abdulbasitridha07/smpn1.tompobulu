@@ -4681,3 +4681,12 @@ footer {
         background: transparent !important;
     }
 }
+@media screen and (max-width: 768px) {
+    .hero {
+        background-size: contain !important; /* Membuat gambar tampil utuh tanpa terpotong */
+        background-repeat: no-repeat !important;
+        background-position: center top !important;
+        min-height: 350px !important; /* Menyesuaikan tinggi agar pas dengan gambar */
+        padding-top: 20px !important;
+    }
+}

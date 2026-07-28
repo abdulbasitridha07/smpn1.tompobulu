@@ -234,7 +234,7 @@ header {
    ========================================================================== */
 .hero {
     position: relative;
-    background: #ffa500 url('Images/smpn1.jpeg') no-repeat center center/cover;
+    background: #ffa500 url('Images/Officialwebsite.gif') no-repeat center center/cover;
     height: 420px;
     display: flex;
     align-items: center;
@@ -272,14 +272,14 @@ header {
     margin-bottom: 15px;
     font-weight: 800;
     line-height: 1.2;
-    text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
     animation: fadeInUp 0.8s ease-out;
+    color: #1b5e20; /* Mengubah warna teks (contoh: #ffffff untuk putih, atau ganti warna lain) */
+    font-family: 'Poppins', sans-serif; /* Mengubah jenis font sesuai keinginan Anda */
 }
 
 .hero-content p {
     font-size: 16px;
     margin-bottom: 25px;
-    text-shadow: 1px 2px 5px rgba(0,0,0,0.3);
     animation: fadeInUp 1s ease-out;
     opacity: 0.9;
 }
@@ -3689,7 +3689,7 @@ header {
    ========================================================================== */
 .hero {
     position: relative;
-    background: #ffa500 url('Images/smpn1.jpeg') no-repeat center center/cover;
+    background: #ffa500 url('Images/Officialwebsite.png') no-repeat center center/cover;
     height: 420px;
     display: flex;
     align-items: center;
@@ -3726,16 +3726,15 @@ header {
     margin-bottom: 15px;
     font-weight: 800;
     line-height: 1.2;
-    text-shadow: 2px 4px 10px rgba(0,0,0,0.3);
     animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-content p {
     font-size: 16px;
     margin-bottom: 25px;
-    text-shadow: 1px 2px 5px rgba(0,0,0,0.3);
     animation: fadeInUp 1s ease-out;
     opacity: 0.9;
+    color: #000000;
 }
 
 .btn-primary {

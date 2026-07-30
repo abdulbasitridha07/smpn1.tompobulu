@@ -3689,7 +3689,7 @@ header {
    ========================================================================== */
 .hero {
     position: relative;
-    background: #ffa500 url('Images/Officialwebsite.png') no-repeat center center/cover;
+    background: #ffa500 url('Images/officialwebsite.png') no-repeat center center/cover;
     height: 420px;
     display: flex;
     align-items: center;
@@ -4700,8 +4700,8 @@ footer {
     @media (max-width: 768px) {
     /* ... kode di atasnya ... */
     }
-    /* ==========================================================================
-   DESAIN HERO SECTION HP DENGAN GRADASI BAWAH & EFEK KACA PREMIUM
+ /* ==========================================================================
+   REVISI HERO HP: TANPA GRADASI, TANPA KOTAK, TEKS HIJAU, TANPA BAYANGAN
    ========================================================================== */
 @media (max-width: 768px) {
     .hero {
@@ -4720,45 +4720,33 @@ footer {
         position: relative !important;
     }
 
-    /* 1. GRADASI MEMUDAR DI BAGIAN BAWAH */
+    /* 1. HAPUS EFEK GRADASI BAWAH (DINONAKTIFKAN) */
     .hero::before {
-        display: block !important;
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 35%; /* Menutupi 35% area bawah agar memudar lembut */
-        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%) !important;
-        z-index: 1;
-        pointer-events: none;
+        display: none !important;
     }
 
-    /* 2. KOTAK TEKS KACA (Membuat tulisan sangat rapi & mudah dibaca) */
+    /* 2. TEKS TRANSPARAN PENUH (TANPA KOTAK) */
     .hero-content {
         position: relative !important;
         z-index: 2;
         text-align: center !important;
-        padding: 25px 20px !important;
-        margin: 0 15px !important;
+        padding: 0 20px !important;
         max-width: 90% !important;
         
-        /* Efek blur kaca premium */
-        background: rgba(255, 255, 255, 0.88) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        border-radius: 16px !important;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-        border: 1px solid rgba(255, 255, 255, 0.5) !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
-    /* 3. JUDUL WARNA HIJAU & TANPA BAYANGAN */
+    /* 3. TULISAN OFFICIAL WARNA HIJAU & TANPA BAYANGAN */
     .hero-content h2 {
-        color: #134F2C !important; /* Hijau sekolah */
-        font-size: 1.6rem !important;
+        color: #134F2C !important; /* Hijau khas sekolah */
+        font-size: 1.8rem !important;
         font-weight: bold !important;
         line-height: 1.3 !important;
-        text-shadow: none !important; /* Hapus bayangan */
+        text-shadow: none !important; /* Tanpa bayangan putih */
         font-family: 'Poppins', sans-serif !important;
         margin-bottom: 10px !important;
     }
@@ -4766,8 +4754,8 @@ footer {
     /* Sub-teks tanpa bayangan */
     .hero-content p {
         color: #333333 !important;
-        font-size: 0.9rem !important;
-        text-shadow: none !important; /* Hapus bayangan */
+        font-size: 0.95rem !important;
+        text-shadow: none !important; /* Tanpa bayangan putih */
         margin-top: 5px !important;
         margin-bottom: 20px !important;
         font-family: 'Poppins', sans-serif !important;
@@ -4776,7 +4764,7 @@ footer {
     /* Tombol */
     .hero-content .btn-primary {
         display: inline-block !important;
-        font-size: 0.85rem !important;
+        font-size: 0.9rem !important;
         padding: 10px 20px !important;
         text-shadow: none !important;
     }

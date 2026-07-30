@@ -4691,50 +4691,40 @@ footer {
     }
 }
 /* ==========================================================================
-   STYLING HERO SECTION UNTUK LAYAR HP (LEBAR MAKSIMAL 768PX)
+   REVISI HERO SECTION UNTUK LAYAR HP (LEBAR MAKSIMAL 768PX)
    ========================================================================== */
 @media (max-width: 768px) {
     .hero {
-        /* 1. Geser gambar latar belakang ke kanan (fokus ke siswa) */
-        background-position: right center !important;
+        background-position: 80% bottom !important; 
         background-size: cover !important;
-        position: relative;
-        min-height: 75vh; /* Menyesuaikan tinggi section di layar HP */
+        min-height: 65vh !important; 
         display: flex;
         align-items: center;
-    }
-
-    /* 2. Tambahkan gradien transparan di sebelah kiri 
-          agar teks tetap terbaca dengan jelas saat menumpuk di atas background */
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.1) 100%);
-        z-index: 1;
-    }
-
-    /* 3. Atur posisi teks konten agar berada di atas gradien */
-    .hero-content {
         position: relative;
+    }
+    .hero::before {
+        display: none !important; 
+    }
+    .hero-content {
+        padding: 20px !important;
+        max-width: 90% !important; 
         z-index: 2;
-        padding: 20px;
-        max-width: 75%; /* Membatasi lebar teks agar tidak menutupi wajah siswa di kanan */
     }
-
-    /* 4. Sesuaikan ukuran teks agar pas dengan layar HP */
     .hero-content h2 {
-        font-size: 1.8rem !important;
+        color: #134F2C !important; 
+        font-size: 2.1rem !important;
+        font-weight: bold;
         line-height: 1.3;
-        color: #1a1a1a !important; /* Warna teks gelap */
-        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+        text-shadow: 
+            2px 2px 4px rgba(255, 255, 255, 0.95), 
+           -2px -2px 4px rgba(255, 255, 255, 0.95),
+           -2px 2px 4px rgba(255, 255, 255, 0.95),
+            2px -2px 4px rgba(255, 255, 255, 0.95) !important;
     }
-
     .hero-content p {
-        font-size: 0.9rem !important;
-        color: #444444 !important;
+        color: #2b2b2b !important;
+        font-size: 1rem !important;
+        font-weight: 600;
+        text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9) !important;
     }
 }
